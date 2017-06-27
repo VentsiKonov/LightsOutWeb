@@ -1,0 +1,32 @@
+body {
+  padding-top: 50px;
+}
+.centered {
+    text-align: center;
+    margin: 0 auto
+}
+.game-tile {
+    margin: .3%;
+    min-width: 60px;
+    max-width: 100px;
+    min-height: 60px;
+    max-height: 100px;
+    padding: 0
+}
+.game-field {
+   margin: 1%;
+}
+
+.light-on {
+   background-color: crimson !important;
+}
+.light-on:hover {
+   background-color: firebrick !important;
+}
+
+.light-off {
+   background-color: green !important;
+}
+.light-off:hover {
+   background-color: darkgreen !important;
+}
