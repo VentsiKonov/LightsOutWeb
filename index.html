@@ -6,7 +6,9 @@
    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u">
    <link rel="stylesheet" href="css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp">
    <link rel="stylesheet" href="css/main.css">
-   <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui, maximum-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+   <meta name="HandheldFriendly" content="True">
+   <meta name="MobileOptimized" content="320">
 </head>
 <body>
    <!-- Nav bar -->
@@ -23,8 +25,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a id="resetBtn" href="#">Reset</a></li>
+            <li><a href="#About" data-toggle="collapse">About</a></li>
+            <li><a href="#" id="resetBtn">Reset</a></li>
             <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Difficulty <span class="caret"></span></a>
                <ul class="dropdown-menu">
@@ -41,8 +43,15 @@
 
    <!-- Game field container -->
    <div class="container">
-      <section id="gameField" class="centered game-field"></section>
-      <div id="debug" class="btn btn-primary centered">Debug</div>
+      <div class="centered">
+         <section id="gameField" class="centered game-field"></section>
+         <div id="debug" class="btn btn-primary centered">Debug</div>
+      </div>
+      <div class="centered collapse" id="About">
+         <h2>Lights Out</h2>
+         <p>Lights Out is an electronic game released by Tiger Electronics in 1995. The game originally consists of a 5 by 5 grid of lights. When the game starts, a random number or a stored pattern of these lights is switched on. Pressing any of the lights will toggle it and the adjacent lights. The goal of the puzzle is to switch all the lights on or off, preferably in as few button presses as possible.</p>
+         <p class="well">This project is a mobile-friendly JavaScript implementation of the game developed for the course "Mobile Internet Content".</p>
+      </div>
    </div>
 
    <!-- Win modal -->
@@ -53,8 +62,9 @@
                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                <h4 class="modal-title">YOU WIN</h4>
             </div>
-            <div class="modal-body">
-               <p>Moves: <span id="moves-count" class="badge"></span></p>
+            <div class="modal-body enlarge">
+               <span aria-hidden="true" class="glyphicon glyphicon-thumbs-up"></span>&nbsp;
+               <span>Solved in <span id="moves-count" class="badge"></span> moves</span>
             </div>
             <div class="modal-footer">
                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

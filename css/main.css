@@ -30,3 +30,7 @@ body {
 .light-off:hover {
    background-color: darkgreen !important;
 }
+
+.enlarge {
+   font-size: calc(1em + 1vw)
+}
